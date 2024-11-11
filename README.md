@@ -65,3 +65,20 @@ ElevatedButton.icon(
               },
             ),
 ```
+
+
+## Tugas 8
+###  Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
+Dalam Flutter, `const` adalah kata kunci penting yang membuat variabel atau objek menjadi immutable, sehingga meningkatkan konsistensi, kinerja, dan efisiensi penggunaan memori. Penggunaan `const` dianjurkan saat nilai tidak akan berubah selama aplikasi berjalan, seperti string konstan, angka, atau widget yang tidak berubah, karena akan mengoptimalkan compile-time konstanta. Namun, `const` sebaiknya tidak digunakan saat nilai perlu diubah selama aplikasi berjalan, seperti data dari API atau pengguna, atau jika Anda tidak yakin nilai akan tetap konstan.
+
+### Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+Column dan Row adalah dua layout widget utama dalam Flutter yang menyusun elemen-elemen secara vertikal dan horizontal. Column berguna untuk menyusun elemen seperti teks, gambar, atau tombol dari atas ke bawah, sementara Row berguna untuk menyusun elemen secara sejajar dari kiri ke kanan, seperti pada tombol atau ikon. Perbedaan utama adalah arah penyusunan, dan masing-masing memiliki properti yang dapat diatur, seperti `mainAxisAlignment` dan `crossAxisAlignment`, untuk mengontrol posisi dan alignment elemen-elemen. Pemilihan antara Column atau Row tergantung pada kebutuhan desain aplikasi, dengan Column cocok untuk susunan vertikal dan Row untuk susunan horizontal.
+
+### Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+Pada halaman form yang saya buat untuk tugas ini, saya menggunakan beberapa elemen input Flutter, yaitu TextFormField untuk input dengan validasi, dan ElevatedButton untuk tombol submit. Selain elemen-elemen tersebut, ada beberapa elemen input lain yang tidak saya gunakan, seperti Dropdown untuk input pilihan, CheckboxListTile dan RadioListTile untuk input pilihan, Slider untuk input angka, dan DateTimeField untuk input tanggal dan waktu. Pemilihan elemen input yang digunakan dalam tugas ini disesuaikan dengan kebutuhan fungsionalitas form, dengan fokus pada input teks dengan validasi dan pengiriman data, pilihan multiple, atau input tanggal/waktu yang lebih kompleks. Namun, Flutter menyediakan berbagai macam elemen input yang dapat digunakan sesuai dengan kebutuhan desain dan fungsionalitas aplikasi.
+
+### Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Dalam aplikasi Flutter yang saya buat, saya telah mengatur tema menggunakan ThemeData di dalam MaterialApp. Saya menetapkan warna dasar (seed color) sebagai `const Color.fromARGB(255, 212, 132, 33)`, yang menjadi acuan untuk warna-warna lain yang dihasilkan oleh `ColorScheme.fromSeed()`, serta mengaktifkan penggunaan Material Design 3 dengan `useMaterial3: true`. Ini memastikan bahwa seluruh aplikasi memiliki tampilan dan gaya yang konsisten, karena semua widget yang menggunakan Material Design akan menyesuaikan warna dan gaya berdasarkan tema yang telah ditetapkan. Selain pengaturan warna dasar, saya juga dapat mengatur properti lain dalam ThemeData seperti gaya teks, ikon, tombol, app bar, dan input field untuk menciptakan identitas visual yang lebih kuat dan kohesif pada aplikasi.
+
+### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+Untuk menangani navigasi pada aplikasi Flutter dengan banyak halaman, kita dapat menggunakan berbagai pendekatan, seperti MaterialPageRoute untuk transisi yang halus, Named Routes untuk memudahkan perpindahan antar halaman, PageView untuk halaman yang dapat digeser, dan BottomNavigationBar atau TabBar untuk menyediakan navigasi utama yang mudah diakses. Di aplikasi saya, saya menggunakan MaterialPageRoute. 

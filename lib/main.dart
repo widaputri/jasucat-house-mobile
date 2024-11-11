@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jasucat_house/menu.dart';
+import 'package:jasucat_house/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 212, 132, 33)),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: MyHomePage(),
     );
   }
 }
