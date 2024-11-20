@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:jasucat_house/screens/moodentry_form.dart';
 import 'package:jasucat_house/screens/menu.dart';
 import 'package:jasucat_house/screens/product_form.dart';
+import 'package:jasucat_house/screens/list_product.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -51,14 +51,24 @@ class LeftDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.mood),
-            title: const Text('Tambah Mood'),
+            leading: const Icon(Icons.shopping_bag),
+            title: const Text('Tambah Produk'),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const ProductFormPage()),
               );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Daftar Produk'),
+            onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProductPage()),
+                );
             },
           ),
         ],
