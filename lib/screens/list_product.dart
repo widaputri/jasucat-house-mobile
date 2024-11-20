@@ -3,6 +3,7 @@ import 'package:jasucat_house/models/product.dart';
 import 'package:jasucat_house/widgets/left_drawer.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:jasucat_house/screens/product_detail.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
@@ -60,40 +61,52 @@ class _ProductPageState extends State<ProductPage> {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 final product = snapshot.data![index];
-                return Container(
-                  margin: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 12,
-                  ),
-                  padding: const EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 4.0,
-                        offset: Offset(0, 2),
+                return GestureDetector(
+                  onTap: () {
+                    // Navigate to the ProductDetailPage
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ProductDetailPage(product: product),
                       ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        product.fields.name,
-                        style: const TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
+                    );
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 12,
+                    ),
+                    padding: const EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 4.0,
+                          offset: Offset(0, 2),
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      Text(product.fields.description),
-                      const SizedBox(height: 10),
-                      Text("Price: ${product.fields.price}"),
-                      const SizedBox(height: 10),
-                      Text("Stock: ${product.fields.stock}"),
-                    ],
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          product.fields.name,
+                          style: const TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(product.fields.description),
+                        const SizedBox(height: 10),
+                        Text("Price: ${product.fields.price}"),
+                        const SizedBox(height: 10),
+                        Text("Stock: ${product.fields.stock}"),
+                      ],
+                    ),
                   ),
                 );
               },
